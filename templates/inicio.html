@@ -1,3 +1,25 @@
 {% extends "base.html" %}
 
 {% block title%}{{title}} - Desarrollo de plantillas base{% endblock title %}
+
+{% block content %}
+    <h1>{{title}}</h1>
+    <p class="lead">{{info}}</p>
+
+    <hr>
+
+    <div class="row text-center mt-4">
+      <div class="col-12">
+        <h2>!Bienvenido a esta aplicacion web de conocimiento¡</h2>
+        <p class="row mb-5 border"></p>
+      </div>
+    </div>
+
+    <div class="mb-3 d-flex justify-content-center aling-items-center">
+<div class="galeria">
+        <img src="static/tigre.jpg" alt="Tigre de Sumatra" style="max-height: 300px;">
+        <img src="static/taj.jpg" alt="Taj Mahal" style="max-height: 300px;">
+    </div>
+    </div>
+
+{% endblock content %}
