@@ -3,6 +3,14 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route("/")
+@app.route("/login")
+def login():
+    return render_template("login.html", title="inicio de secion")
+
+@app.route("/registro")
+def registro():
+    return render_template("registro.html", title="registro de usuario")
+ 
 @app.route("/inicio")
 def inicio():
     """Ruta para la página de inicio"""
@@ -33,9 +41,7 @@ def acerca():
     contenido = "Un viaje al pasado sobre ruedas. Explora la historia de los automóviles clásicos, su diseño atemporal y las leyendas detrás de ellos."
     return render_template("acerca.html", title="Vehículos Antiguos", content=contenido)
 
-@app.route("/login")
-def login():
-    return render_template("login.html", title="inicio de secion")
+
 
 if __name__ == '__main__':
     app.run(debug=True)
