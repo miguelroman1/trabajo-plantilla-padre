@@ -1,2 +1,223 @@
 {% extends "base.html" %}
-{% block title%}{{title}} - Mi primer proyecto con plantillas{% endblock title %}
+{% block title %}Maravillas del Mundo{% endblock title %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="text-center mb-4">Maravillas del Mundo Antiguo</h1>
+    <p class="text-center mb-5">Descubre las increíbles construcciones que asombraron a las civilizaciones antiguas y que marcaron la historia de la humanidad.</p>
+
+    <div class="row g-4">
+
+        <!-- Gran Pirámide de Guiza -->
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100 hover-scale p-3">
+                <div class="row g-3 align-items-center">
+                    <h4 class="card-title text-center mb-2">Gran Pirámide de Guiza</h4>
+                    <div class="col-12 text-center">
+                        <img src="static/img/piramides.jpeg" alt="Gran Pirámide de Guiza" 
+                             class="img-fluid rounded mb-3" style="max-height: 240px; object-fit: cover;">
+                    </div>
+                    <div class="col-12">
+                        <div class="ratio ratio-16x9 mb-3">
+                            <video controls poster="static/img/piramides.jpeg">
+                                <source src="static/videos/video_guiza.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <ul class="list-unstyled mb-0">
+                            <li><strong>Ubicación:</strong> Guiza, Egipto</li>
+                            <li><strong>Construcción:</strong> Alrededor del 2580–2560 a.C.</li>
+                            <li><strong>Altura original:</strong> 146.6 m (actualmente 138.8 m)</li>
+                            <li><strong>Materiales:</strong> Bloques de piedra caliza y granito</li>
+                            <li><strong>Propósito:</strong> Tumba del faraón Keops</li>
+                            <li><strong>Curiosidad:</strong> La única maravilla del mundo antiguo que aún existe</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Jardines Colgantes de Babilonia -->
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100 hover-scale p-3">
+                <div class="row g-3 align-items-center">
+                    <h4 class="card-title text-center mb-2">Jardines Colgantes de Babilonia</h4>
+                    <div class="col-12 text-center">
+                        <img src="static/img/jardines.jpeg" alt="Jardines Colgantes de Babilonia"
+                             class="img-fluid rounded mb-3" style="max-height: 240px; object-fit: cover;">
+                    </div>
+                    <div class="col-12">
+                        <div class="ratio ratio-16x9 mb-3">
+                            <video controls poster="static/img/jardines.jpeg">
+                                <source src="static/videos/jardines.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <ul class="list-unstyled mb-0">
+                            <li><strong>Ubicación:</strong> Babilonia, Mesopotamia (actual Irak)</li>
+                            <li><strong>Construcción:</strong> Alrededor del 600 a.C.</li>
+                            <li><strong>Altura estimada:</strong> Hasta 25 m</li>
+                            <li><strong>Materiales:</strong> Ladrillos de barro y madera</li>
+                            <li><strong>Propósito:</strong> Jardines ornamentales para la reina Amytis</li>
+                            <li><strong>Curiosidad:</strong> Su existencia es debatida; descritos por escritores antiguos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Estatua de Zeus -->
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100 hover-scale p-3">
+                <div class="row g-3 align-items-center">
+                    <h4 class="card-title text-center mb-2">Estatua de Zeus</h4>
+                    <div class="col-12 text-center">
+                        <img src="static/img/zeus.jpg" alt="Estatua de Zeus" 
+                             class="img-fluid rounded mb-3" style="max-height: 240px; object-fit: cover;">
+                    </div>
+                    <div class="col-12">
+                        <div class="ratio ratio-16x9 mb-3">
+                            <video controls poster="static/img/zeus.jpg">
+                                <source src="static/videos/zeus.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <ul class="list-unstyled mb-0">
+                            <li><strong>Ubicación:</strong> Olimpia, Grecia</li>
+                            <li><strong>Construcción:</strong> Alrededor del 435 a.C.</li>
+                            <li><strong>Altura:</strong> Aproximadamente 12 m</li>
+                            <li><strong>Materiales:</strong> Marfil y oro sobre un marco de madera</li>
+                            <li><strong>Propósito:</strong> Representación del dios Zeus en el templo de Olimpia</li>
+                            <li><strong>Curiosidad:</strong> Considerada una de las obras maestras de la escultura griega antigua</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Templo de Artemisa -->
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100 hover-scale p-3">
+                <div class="row g-3 align-items-center">
+                    <h4 class="card-title text-center mb-2">Templo de Artemisa en Éfeso</h4>
+                    <div class="col-12 text-center">
+                        <img src="static/img/artemisa.jpg" alt="Templo de Artemisa" 
+                             class="img-fluid rounded mb-3" style="max-height: 240px; object-fit: cover;">
+                    </div>
+                    <div class="col-12">
+                        <div class="ratio ratio-16x9 mb-3">
+                            <video controls poster="static/img/artemisa.jpg">
+                                <source src="static/videos/artemisa.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <ul class="list-unstyled mb-0">
+                            <li><strong>Ubicación:</strong> Éfeso, actual Turquía</li>
+                            <li><strong>Construcción:</strong> Siglo VI a.C.</li>
+                            <li><strong>Dimensiones:</strong> 115 m de largo por 55 m de ancho</li>
+                            <li><strong>Materiales:</strong> Mármol blanco</li>
+                            <li><strong>Propósito:</strong> Dedicado a la diosa Artemisa</li>
+                            <li><strong>Curiosidad:</strong> Fue reconstruido varias veces debido a incendios y saqueos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mausoleo de Halicarnaso -->
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100 hover-scale p-3">
+                <div class="row g-3 align-items-center">
+                    <h4 class="card-title text-center mb-2">Mausoleo de Halicarnaso</h4>
+                    <div class="col-12 text-center">
+                        <img src="static/img/halicarnaso.jpg" alt="Mausoleo de Halicarnaso" 
+                             class="img-fluid rounded mb-3" style="max-height: 240px; object-fit: cover;">
+                    </div>
+                    <div class="col-12">
+                        <div class="ratio ratio-16x9 mb-3">
+                            <video controls poster="static/img/halicarnaso.jpg">
+                                <source src="static/videos/halicarnaso.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <ul class="list-unstyled mb-0">
+                            <li><strong>Ubicación:</strong> Halicarnaso, actual Bodrum (Turquía)</li>
+                            <li><strong>Construcción:</strong> 353 a.C.</li>
+                            <li><strong>Altura:</strong> 45 m</li>
+                            <li><strong>Materiales:</strong> Mármol blanco</li>
+                            <li><strong>Propósito:</strong> Tumba del rey Mausolo</li>
+                            <li><strong>Curiosidad:</strong> De su nombre proviene la palabra "mausoleo"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coloso de Rodas -->
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100 hover-scale p-3">
+                <div class="row g-3 align-items-center">
+                    <h4 class="card-title text-center mb-2">Coloso de Rodas</h4>
+                    <div class="col-12 text-center">
+                        <img src="static/img/rodas.jpg" alt="Coloso de Rodas" 
+                             class="img-fluid rounded mb-3" style="max-height: 240px; object-fit: cover;">
+                    </div>
+                    <div class="col-12">
+                        <div class="ratio ratio-16x9 mb-3">
+                            <video controls poster="static/img/rodas.jpg">
+                                <source src="static/videos/rodas.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <ul class="list-unstyled mb-0">
+                            <li><strong>Ubicación:</strong> Isla de Rodas, Grecia</li>
+                            <li><strong>Construcción:</strong> 292–280 a.C.</li>
+                            <li><strong>Altura:</strong> 33 m</li>
+                            <li><strong>Materiales:</strong> Bronce y hierro</li>
+                            <li><strong>Propósito:</strong> Monumento al dios Helios</li>
+                            <li><strong>Curiosidad:</strong> Destruido por un terremoto en 226 a.C.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Faro de Alejandría -->
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100 hover-scale p-3">
+                <div class="row g-3 align-items-center">
+                    <h4 class="card-title text-center mb-2">Faro de Alejandría</h4>
+                    <div class="col-12 text-center">
+                        <img src="static/img/faro.jpg" alt="Faro de Alejandría" 
+                             class="img-fluid rounded mb-3" style="max-height: 240px; object-fit: cover;">
+                    </div>
+                    <div class="col-12">
+                        <div class="ratio ratio-16x9 mb-3">
+                            <video controls poster="static/img/faro.jpg">
+                                <source src="static/videos/faro.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <ul class="list-unstyled mb-0">
+                            <li><strong>Ubicación:</strong> Isla de Faros, Alejandría (Egipto)</li>
+                            <li><strong>Construcción:</strong> Siglo III a.C.</li>
+                            <li><strong>Altura:</strong> Entre 100 y 130 m</li>
+                            <li><strong>Materiales:</strong> Piedra caliza y mármol</li>
+                            <li><strong>Propósito:</strong> Guía para los navegantes del puerto de Alejandría</li>
+                            <li><strong>Curiosidad:</strong> Permaneció en pie más de 1,500 años antes de su destrucción por terremotos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div> <!-- Fin row -->
+</div>
+{% endblock content %}

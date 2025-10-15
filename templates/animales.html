@@ -1,13 +1,167 @@
 {% extends "base.html" %}
-{% block title%}Animales Exoticos{% endblock title %}
+{% block title %}Animales Exóticos{% endblock title %}
+
 {% block content %}
-<h1>Animales Exoticos</h1>
-<p>En esta seccion encontraras informacion sobre animales exoticos.</p>
+<div class="container py-5">
+    <h1 class="text-center mb-4">Animales Exóticos</h1>
+    <p class="text-center mb-5">En esta sección encontrarás información sobre animales exóticos de distintas categorías.</p>
 
+    <!-- Animales Acuáticos -->
+    <h2 class="mb-4 text-primary">🐠 Animales Acuáticos</h2>
+    <div class="row g-4">
+        <!-- Pez Mandarín -->
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100 hover-scale">
+                <div class="row g-0 align-items-center p-3">
+                    <div class="col-4">
+                        <img src="static/mandarin.jpg" alt="Pez Mandarín" class="img-fluid rounded">
+                    </div>
+                    <div class="col-8">
+                        <h4 class="card-title">Pez Mandarín (Synchiropus splendidus)</h4>
+                        <ul class="list-unstyled mb-0">
+                            <li><strong>Nombre común:</strong> Pez mandarín, Dragón mandarín</li>
+                            <li><strong>Hábitat:</strong> Arrecifes de coral del Pacífico occidental</li>
+                            <li><strong>Tamaño:</strong> 6 - 8 cm</li>
+                            <li><strong>Alimentación:</strong> Copépodos, pequeños crustáceos y larvas</li>
+                            <li><strong>Comportamiento:</strong> Tranquilo, pacífico, tímido</li>
+                            <li><strong>Cuidados en acuario:</strong> Acuario marino maduro, mínimo 200 litros</li>
+                            <li><strong>Curiosidad:</strong> Colores brillantes por células llamadas iridóforos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<h3>Animales Acuaticos</h3>
-<div class="galeria col-12">
-    <img class="col-4" src="static/mandarin.jpg" alt="imagen de pez mandarin" style="max-height: 200px;">
-    <p class="col-8"></p>
+        <!-- Pulpo Dumbo -->
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100 hover-scale">
+                <div class="row g-0 align-items-center p-3">
+                    <div class="col-4">
+                        <img src="static/dumbo.jpg" alt="Pulpo Dumbo" class="img-fluid rounded">
+                    </div>
+                    <div class="col-8">
+                        <h4 class="card-title">Pulpo Dumbo (Grimpoteuthis sp.)</h4>
+                        <ul class="list-unstyled mb-0">
+                            <li><strong>Nombre común:</strong> Pulpo Dumbo, Dumbo octopus</li>
+                            <li><strong>Hábitat:</strong> Fondos marinos profundos (3000 - 4000 m)</li>
+                            <li><strong>Tamaño:</strong> 20 - 30 cm, algunas especies hasta 1.8 m</li>
+                            <li><strong>Alimentación:</strong> Gusanos, crustáceos y moluscos bentónicos</li>
+                            <li><strong>Comportamiento:</strong> Nadan lentamente usando aletas y brazos; pacíficos y tímidos</li>
+                            <li><strong>Curiosidad:</strong> Aletas tipo “orejas de Dumbo” les permiten maniobrar en la oscuridad</li>
+                            <li><strong>Adaptaciones:</strong> Cuerpo gelatinoso y flotante, soporta presión y bajas temperaturas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Animales Terrestres -->
+    <h2 class="mt-5 mb-4 text-success">🦓 Animales Terrestres</h2>
+    <div class="row g-4">
+        <!-- Okapi -->
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100 hover-scale">
+                <div class="row g-0 align-items-center p-3">
+                    <div class="col-4">
+                        <img src="static/okapi.jpg" alt="Okapi" class="img-fluid rounded">
+                    </div>
+                    <div class="col-8">
+                        <h4 class="card-title">Okapi (Okapia johnstoni)</h4>
+                        <ul class="list-unstyled mb-0">
+                            <li><strong>Nombre común:</strong> Okapi</li>
+                            <li><strong>Hábitat:</strong> Bosques tropicales del Congo</li>
+                            <li><strong>Tamaño:</strong> 1.5 - 2 m de altura, 2.5 m de longitud</li>
+                            <li><strong>Alimentación:</strong> Hojas, brotes, frutas y helechos</li>
+                            <li><strong>Comportamiento:</strong> Solitario, tímido y nocturno</li>
+                            <li><strong>Curiosidad:</strong> Pariente cercano de la jirafa; patas con rayas blancas para camuflaje</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pangolín -->
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100 hover-scale">
+                <div class="row g-0 align-items-center p-3">
+                    <div class="col-4">
+                        <img src="static/pangolin.jpg" alt="Pangolín" class="img-fluid rounded">
+                    </div>
+                    <div class="col-8">
+                        <h4 class="card-title">Pangolín (Manis sp.)</h4>
+                        <ul class="list-unstyled mb-0">
+                            <li><strong>Nombre común:</strong> Pangolín</li>
+                            <li><strong>Hábitat:</strong> Bosques, sabanas y matorrales de África y Asia</li>
+                            <li><strong>Tamaño:</strong> 30 - 100 cm</li>
+                            <li><strong>Alimentación:</strong> Hormigas y termitas (usa lengua larga)</li>
+                            <li><strong>Comportamiento:</strong> Nocturno, solitario y sigiloso; se enrolla para defenderse</li>
+                            <li><strong>Curiosidad:</strong> Cubierto de escamas; uno de los mamíferos más traficados</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Animales Aéreos -->
+    <h2 class="mt-5 mb-4 text-warning">🦜 Animales Aéreos</h2>
+    <div class="row g-4">
+        <!-- Pájaro Jacinto -->
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100 hover-scale">
+                <div class="row g-0 align-items-center p-3">
+                    <div class="col-4">
+                        <img src="static/jacinto.jpg" alt="Pájaro Jacinto" class="img-fluid rounded">
+                    </div>
+                    <div class="col-8">
+                        <h4 class="card-title">Pájaro Jacinto (Anodorhynchus hyacinthinus)</h4>
+                        <ul class="list-unstyled mb-0">
+                            <li><strong>Nombre común:</strong> Pájaro Jacinto, Guacamayo Jacinto</li>
+                            <li><strong>Hábitat:</strong> Bosques y sabanas del Brasil, Bolivia y Paraguay</li>
+                            <li><strong>Tamaño:</strong> 100 cm de longitud</li>
+                            <li><strong>Alimentación:</strong> Frutas, nueces y semillas</li>
+                            <li><strong>Comportamiento:</strong> Social, ruidoso, suelen formar grupos</li>
+                            <li><strong>Curiosidad:</strong> Guacamayo más grande del mundo; plumaje azul intenso</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quetzal -->
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100 hover-scale">
+                <div class="row g-0 align-items-center p-3">
+                    <div class="col-4">
+                        <img src="static/quetzal.jpeg" alt="Quetzal" class="img-fluid rounded">
+                    </div>
+                    <div class="col-8">
+                        <h4 class="card-title">Quetzal (Pharomachrus mocinno)</h4>
+                        <ul class="list-unstyled mb-0">
+                            <li><strong>Nombre común:</strong> Quetzal</li>
+                            <li><strong>Hábitat:</strong> Bosques nubosos de Centroamérica</li>
+                            <li><strong>Tamaño:</strong> 36 - 40 cm, cola larga en machos hasta 65 cm</li>
+                            <li><strong>Alimentación:</strong> Frutas, insectos y pequeños vertebrados</li>
+                            <li><strong>Comportamiento:</strong> Solitario o en pareja, territorial durante reproducción</li>
+                            <li><strong>Curiosidad:</strong> Plumaje verde iridiscente y cola larga; símbolo de libertad y belleza</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<!-- Estilos personalizados -->
+<style>
+    .hover-scale {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .hover-scale:hover {
+        transform: translateY(-5px) scale(1.02);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+</style>
+
 {% endblock content %}
