@@ -33,5 +33,9 @@ def acerca():
     contenido = "Un viaje al pasado sobre ruedas. Explora la historia de los automóviles clásicos, su diseño atemporal y las leyendas detrás de ellos."
     return render_template("acerca.html", title="Vehículos Antiguos", content=contenido)
 
+@app.route("/login")
+def login():
+    return render_template("login.html", title="inicio de secion")
+
 if __name__ == '__main__':
     app.run(debug=True)
