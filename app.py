@@ -1,16 +1,8 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for, flash
 
 app = Flask(__name__)
 
 @app.route("/")
-@app.route("/login")
-def login():
-    return render_template("login.html", title="inicio de secion")
-
-@app.route("/registro")
-def registro():
-    return render_template("registro.html", title="registro de usuario")
- 
 @app.route("/inicio")
 def inicio():
     """Ruta para la página de inicio"""
@@ -34,6 +26,33 @@ def maravillas():
     """Ruta para la sección de vehículos antiguos"""
     contenido = "Un viaje al pasado sobre ruedas. Explora la historia de los automóviles clásicos, su diseño atemporal y las leyendas detrás de ellos."
     return render_template("maravillas.html", title="Vehículos Antiguos", content=contenido)
+
+@app.route("/registrame")
+def registro():
+    error = None
+    if request.method =="POST":
+        nombre = request.form["nombre"]
+        apellido = request.form["apellido"]
+        email = request.form["email"]
+        contra = request.form["contra"]
+        comfircontra = request.form["confircontra"]
+        fecha = request.form["fecha"]
+        genero = request.form["genero"]
+        
+        
+        if contra != comfircontra:
+            error = "La contraseña no coincide"
+            
+            if error != None:
+                flash(error)
+                return render_template("registrame.html")
+            else:
+                flash(f"!Registro exitoso para el usuario{nombre} {apellido}")
+                return render_template("inicio.html")
+
+@app.route("/login")
+def login():
+    return render_template("login.html", title="inicio de secion")
 
 @app.route("/acerca")
 def acerca():
