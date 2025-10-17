@@ -1,0 +1,90 @@
+{% extends "base2.html" %}
+{% block title %}Registrarse{% endblock %}
+
+{% block content %}
+<div class="container d-flex align-items-center justify-content-center min-vh-100">
+    <div class="card shadow border-0 p-4" style="max-width: 450px; width: 100%;">
+        <div class="text-center mb-4">
+            <div class="rounded-circle bg-success bg-opacity-25 d-inline-flex align-items-center justify-content-center" style="width: 70px; height: 70px;">
+                <i class="bi bi-person-plus-fill text-success" style="font-size: 2rem;"></i>
+            </div>
+            <h3 class="mt-3 mb-2 fw-semibold">Crear cuenta</h3>
+            <p class="text-muted mb-0">Completa tus datos para registrarte</p>
+        </div>
+
+        <form method="POST">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="nombre" class="form-label fw-medium">Nombre</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-person"></i></span>
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="apellido" class="form-label fw-medium">Apellido</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-person"></i></span>
+                        <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Tu apellido" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="fecha_nacimiento" class="form-label fw-medium">Fecha de nacimiento</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-calendar-date"></i></span>
+                    <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento" required>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="genero" class="form-label fw-medium">Género</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-gender-ambiguous"></i></span>
+                    <select class="form-select" id="genero" name="genero" required>
+                        <option value="" disabled selected>Selecciona tu género</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="femenino">Femenino</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="correo" class="form-label fw-medium">Correo electrónico</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                    <input type="email" class="form-control" id="correo" name="correo" placeholder="correo@ejemplo.com" required>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label fw-medium">Contraseña</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                    <input type="password" class="form-control" id="contra" name="password" placeholder="Crea una contraseña" required>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="confirmar" class="form-label fw-medium">Confirmar contraseña</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+                    <input type="password" class="form-control" id="confirmar" name="confirmar" placeholder="Repite la contraseña" required>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success w-100">Registrarse</button>
+        </form>
+
+        <hr class="my-4">
+
+        <p class="text-center mb-0">
+            ¿Ya tienes cuenta?
+            <a href="{{ url_for('login.html') }}" class="text-decoration-none fw-semibold">Inicia sesión aquí</a>
+        </p>
+    </div>
+</div>
+{% endblock %}
