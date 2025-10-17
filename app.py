@@ -3,29 +3,12 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 app = Flask(__name__)
 app.secret_key = "clave_super_segura"
 
-# Aquí guardaremos temporalmente los usuarios (simula una base de datos)
 usuarios = {}
 
 @app.route("/")
-@app.route("/login", methods=["GET", "POST"])
-def login():
-    if request.method == "POST":
-        correo = request.form.get("correo")
-        password = request.form.get("password")
-
-        # Verificar si el usuario existe y la contraseña coincide
-        if correo in usuarios and usuarios[correo] == password:
-            flash("✅ Inicio de sesión exitoso")
-            return redirect(url_for("inicio.html"))
-        else:
-            flash("❌ Usuario o contraseña incorrectos")
-            return render_template("login.html", title="Inicio de sesión")
-
-    return render_template("login.html", title="Inicio de sesión")
-
-
 @app.route("/registro", methods=["GET", "POST"])
 def registro():
+    error = None
     if request.method == "POST":
         nombre = request.form["nombre"]
         apellido = request.form["apellido"]
@@ -34,24 +17,32 @@ def registro():
         confirmar = request.form["confirmar"]
         fecha = request.form["fecha_nacimiento"]
         genero = request.form["genero"]
+        
 
-        # Validar contraseñas
         if password != confirmar:
-            flash("❌ Las contraseñas no coinciden")
-            return render_template("registro", title="Registro")
+            error("Las contraseñas no coinciden")
 
-        # Validar si el usuario ya existe
-        if correo in usuarios:
-            flash("⚠️ Este correo ya está registrado")
-            return render_template("registro", title="Registro")
+        if error != None:
+            flash(error)
+            return render_template("registro")
+        else:
+            flash(f"!registro exitoso para el usuario¡")
+            return render_template("inicio")
 
-        # Guardar el usuario
-        usuarios[correo] = password
-        flash(f"✅ Registro exitoso para {nombre} {apellido}")
-        return redirect(url_for("inicio.html"))
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        correo = request.form.get("correo")
+        password = request.form.get("password")
 
-    return render_template("registro.html", title="Registro")
+        if correo in usuarios and usuarios[correo] == password:
+            flash("Inicio de sesión exitoso")
+            return redirect(url_for("inicio.html"))
+        else:
+            flash("Usuario o contraseña incorrectos")
+            return render_template("login.html", title="Inicio de sesión")
 
+    return render_template("login.html", title="Inicio de sesión")
 
 @app.route("/inicio")
 def inicio():
