@@ -21,13 +21,16 @@ def registro():
 
         if password != confirmar:
             error("Las contraseñas no coinciden")
+        elif not nombre or not correo or not password:
+            error = "todos los campos obligatorios deben completarse"
 
         if error != None:
             flash(error)
-            return render_template("registro")
+            return redirect(url_for("registro"))
         else:
             flash(f"!registro exitoso para el usuario¡")
-            return render_template("inicio")
+            return redirect(url_for("inicio"))
+    return render_template("registro.html")
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
