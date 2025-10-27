@@ -1,49 +1,55 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, session
 
 app = Flask(__name__)
 app.secret_key = "clave_super_segura"
 
-usuarios = {}
-
+USUARIOS_REGISTRADOS = {
+    'admin@correo.com':{
+        'contra':'Admin123',
+        'nombre':'Admin',
+        'fecha_nacimiento':'2008-07-05'
+    }
+}
 @app.route("/")
 def home():
-    return redirect(url_for("registro"))
+    return redirect(url_for("inicio"))
+
+@app.route("/validLogin", methods = ['GET', 'POST'])
+def validLogin():
+    if request.method == 'POST':
+        email = request.form.get('correo','').strip()
+        contra  =request.form.get('contra','')
+        
+        if not email or not contra:
+            flash("Por favor ingresa tu correo y contraseña", "error")
+        elif email in USUARIOS_REGISTRADOS:
+            usuario = USUARIOS_REGISTRADOS[email]
+            if usuario['contra'] == contra:
+                session['usuario_email'] = email
+                session['usuario'] = usuario['nombre']
+                session['logueados'] = True
 
 @app.route("/registro", methods=["GET", "POST"])
 def registro():
+    error = None
     if request.method == "POST":
-        nombre = request.form.get("nombre")
-        apellido = request.form.get("apellido")
-        correo = request.form.get("correo").lower()
-        password = request.form.get("password")
-        confirmar = request.form.get("confirmar")
-        fecha = request.form.get("fecha_nacimiento")
-        genero = request.form.get("genero")
+        nombreCompleto = request.form["nombre"]
+        correo = request.form["correo"]
+        contra = request.form["password"]
+        confirm = request.form["confirar"]
+        fecha = request.form["fecha_nacimiento"]
+        genero = request.form["genero"]
+        
+        if contra != confirm:
+            error = "la contraseña es incorrecta"
+        
+        if error != None:
+            flash(error)
+            return render_template("registro.html")
+        else:
+            flash(f"registro exitoso")
+            return render_template("inicio.html")
 
-        # Validaciones
-        if not nombre or not apellido or not correo or not password:
-            flash("Todos los campos obligatorios deben completarse", "danger")
-            return redirect(url_for("registro"))
-
-        if password != confirmar:
-            flash("Las contraseñas no coinciden", "danger")
-            return redirect(url_for("registro"))
-
-        if correo in usuarios:
-            flash("Este correo ya está registrado", "warning")
-            return redirect(url_for("registro"))
-
-        # Guardar el usuario en el diccionario
-        usuarios[correo] = {
-            "nombre": nombre,
-            "apellido": apellido,
-            "password": password,
-            "fecha": fecha,
-            "genero": genero
-        }
-
-        flash(f"¡Bienvenido {nombre} {apellido}! Tu cuenta fue creada exitosamente.", "success")
-        return redirect(url_for("inicio"))
 
 
     return render_template("registro.html")
