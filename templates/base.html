@@ -10,28 +10,32 @@
 <body class="bg-light">
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <a class="navbar-brand" href="{{ url_for('inicio') }}">Desarrollo de Plantilla Base</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{{ url_for('inicio') }}">Mi Sitio</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav me-auto">
         <li class="nav-item"><a class="nav-link" href="{{ url_for('inicio') }}">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url_for('animales') }}">Animales Exóticos</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url_for('vehiculos') }}">Vehículos Antiguos</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url_for('maravillas') }}">Maravillas del Mundo</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url_for('registro') }}">Registrate</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ url_for('acerca') }}">Acerca de...</a></li>
-        <a class="navbar-brand" href="{{ url_for('login') }}">Inicio de Sesion</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('animales') }}">Animales</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('vehiculos') }}">Vehículos</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('maravillas') }}">Maravillas</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('acerca') }}">Acerca</a></li>
+      </ul>
+
+      <ul class="navbar-nav">
+        {% if session.get('logueado') %}
+          <li class="nav-item">
+            <span class="navbar-text text-white mb-4">Hola, {{ session['usuario'] }}</span>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Cerrar sesión</a></li>
+        {% else %}
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}">Iniciar sesión</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('registro') }}">Registrarse</a></li>
+        {% endif %}
       </ul>
     </div>
   </div>
 </nav>
+
 
 <!-- CONTENIDO -->
 <main class="container my-4">

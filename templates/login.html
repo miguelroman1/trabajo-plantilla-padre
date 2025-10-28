@@ -1,5 +1,5 @@
 {% extends "base2.html" %}
-{% block title %}{{title}} - Inicio de Sesion{% endblock title %}
+{% block title %}{{title}}  Inicio de Sesión{% endblock title %}
 
 {% block content %}
 <div class="container d-flex align-items-center justify-content-center min-vh-100">
@@ -12,12 +12,29 @@
             <p class="text-muted mb-0">Por favor, inicia sesión en tu cuenta</p>
         </div>
 
-        <form method="POST">
+        <!-- 🔔 BLOQUE DE MENSAJES FLASH -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert alert-{{ 
+                  'danger' if category == 'error' 
+                  else 'success' if category == 'success' 
+                  else category 
+              }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+        <!-- 🔔 FIN BLOQUE MENSAJES -->
+
+        <form method="POST" action="{{ url_for('validlogin') }}">
             <div class="mb-3">
-                <label for="username" class="form-label fw-medium">Usuario</label>
+                <label for="username" class="form-label fw-medium">Correo</label>
                 <div class="input-group">
                     <span class="input-group-text"><i class="bi bi-person"></i></span>
-                    <input type="text" class="form-control" id="username" name="username" placeholder="Ingresa tu nombre" required>
+                    <input type="text" class="form-control" id="username" name="correo" placeholder="Ingresa tu correo" required>
                 </div>
             </div>
 
@@ -25,7 +42,7 @@
                 <label for="password" class="form-label fw-medium">Contraseña</label>
                 <div class="input-group">
                     <span class="input-group-text"><i class="bi bi-lock"></i></span>
-                    <input type="password" class="form-control" id="contra" name="password" placeholder="Ingresa tu contraseña" required>
+                    <input type="password" class="form-control" id="contra" name="contra" placeholder="Ingresa tu contraseña" required>
                 </div>
             </div>
 
